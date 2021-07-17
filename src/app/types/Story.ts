@@ -7,7 +7,7 @@ export interface Story {
     url : string;
     by: string;
     descendants : number,
-    kids : number[],
+    kids?: number[],
     score : number,
     time : Date,
 };

@@ -10,14 +10,14 @@ import { Story } from 'src/app/types/Story';
 export class StoryComponent implements OnInit {
   
   @Input() storyId: number = 0;
-  @Input() rankId?: number;
+  @Input() rankId: number = 0;
   story?: Story;
   
   constructor(private storyService: StoryService) {}
 
   ngOnInit(): void {
       this.storyService.getStory(this.storyId).subscribe((story) => {
-        console.log({story})
+        console.log(story)
         this.story = story
       });
   }

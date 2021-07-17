@@ -9,6 +9,7 @@ import { StoriesComponent } from './components/stories/stories.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StoryComponent } from './components/story/story.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 const appRoutes: Routes = [
   { path: '', component: StoriesComponent },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     FooterComponent,
     StoriesComponent,
     StoryComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,6 @@ export class StoriesComponent implements OnInit {
   constructor(private storyService: StoryService) {}
 
   ngOnInit(): void {
-    this.storyService.getStories().subscribe((stories) => (this.stories = stories.splice(0,5)));
+    this.storyService.getStories().subscribe((stories) => (this.stories = stories.splice(0,100)));
   }
 }

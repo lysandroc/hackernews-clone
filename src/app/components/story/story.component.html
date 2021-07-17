@@ -1,7 +1,13 @@
-<p> - order: {{ rankId  }} 
+<p> - order: {{ rankId + 1}} 
     - title: {{ story?.title }}
     - score: {{ story?.score }}
     - by: {{ story?.by }}
     - From: {{ story?.by }}
     - id: {{storyId}} </p>
+
+<div *ngIf="story?.kids ?? false" >
+  comments:
+  <app-comments [commentsId]="story?.kids ?? []">
+  </app-comments>
+</div>
 <br>
