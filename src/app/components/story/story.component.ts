@@ -17,7 +17,7 @@ export class StoryComponent implements OnInit {
 
   ngOnInit(): void {
       this.storyService.getStory(this.storyId).subscribe((story) => {
-        console.log(story)
+        // console.log(story)
         this.story = story
       });
   }

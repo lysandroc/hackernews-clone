@@ -1,13 +1,15 @@
-<p> - order: {{ rankId + 1}} 
-    - title: {{ story?.title }}
-    - score: {{ story?.score }}
-    - by: {{ story?.by }}
-    - From: {{ story?.by }}
-    - id: {{storyId}} </p>
+<div class="container">
+  <p> - order: {{ rankId + 1}} 
+      - title: {{ story?.title }}
+      - score: {{ story?.score }}
+      - by: {{ story?.by }}
+      - From: {{ story?.by }}
+      - id: {{storyId}} </p>
 
-<div *ngIf="story?.kids ?? false" >
-  comments:
-  <app-comments [commentsId]="story?.kids ?? []">
-  </app-comments>
+  <div *ngIf="story?.kids ?? false" class="comments">
+    comments:
+    <app-comments [commentsId]="story?.kids ?? []">
+    </app-comments>
+  </div>
+  <br>
 </div>
-<br>

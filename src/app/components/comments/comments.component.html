@@ -1,1 +1,3 @@
-<p>{{commentsId}}</p>
+<div class="container">
+    <div *ngFor="let comment of comments"><div [innerHTML]="comment.text" class="content"></div></div>
+</div>
