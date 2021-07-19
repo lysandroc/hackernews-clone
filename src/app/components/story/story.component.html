@@ -13,7 +13,14 @@
       <span class="details">
         {{ story?.score }} points by {{ story?.by }} |
         <span class="hide" (click)="hideStory()"> hide </span>
-        <span class="comments" *ngIf="story?.kids && story?.kids?.length">| {{ story?.kids?.length }} comments</span>
+        <a 
+            *ngIf="story?.kids && story?.kids?.length"  
+            class="comments" 
+            [routerLink]="['/detail']"
+            [queryParams]="{id: story?.id}"
+          >
+          | {{ story?.kids?.length }} comments
+        </a>
       </span>
     </div>
   <div>

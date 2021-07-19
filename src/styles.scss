@@ -3,7 +3,7 @@
 
 :root {
   --header: #ff6600;
-  --section-background: #F6F6EF;
+  --section-background: #f6f6ef;
   --clr-gray-light: #b0bec5;
   --lightgray: #828282;
 }
@@ -17,4 +17,16 @@
 body {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  a:hover,
+  a:visited,
+  a:link,
+  a:active {
+    text-decoration: none;
+  }
 }
