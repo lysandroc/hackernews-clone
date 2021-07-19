@@ -2,14 +2,21 @@ header {
   background-color: var(--header);
   padding: 0.2rem;
   font-weight: bold;
-  padding-left: 10px;
+  padding-left: 5px 10px;
+}
+
+img {
+  border: 1px white solid;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 .options {
   padding-left: 5px;
   font-size: 14px;
   font-weight: normal;
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     display: flex;
     flex-direction: row;
     padding-left: 0;
