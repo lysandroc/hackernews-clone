@@ -1,0 +1,10 @@
+<app-story
+  *ngFor="let storyId of stories; let rankId = index"
+  [storyId]="storyId"
+  [rankId]="rankId"
+></app-story>
+<!-- <span *ngFor="let storyId of stories"> 
+    <app-story
+        [storyId]="storyId">
+    </app-story>
+</span> -->
