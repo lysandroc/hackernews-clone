@@ -14,7 +14,7 @@ export class StoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.storyService.getStories().subscribe((storiesId) => {
-      const topStories = storiesId.splice(0,100); 
+      const topStories = storiesId.splice(0,10); 
       this.loadStories(topStories);
     })
   }

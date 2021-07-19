@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommentService } from '../../services/comment/comment.service';
 import { Comment } from '../../types/Comment';
+import { StoriesId } from '../../types/Story';
 
 @Component({
   selector: 'app-comments',
@@ -9,12 +10,10 @@ import { Comment } from '../../types/Comment';
 })
 export class CommentsComponent implements OnInit {
 
-  @Input() commentsId: number[] = [];
+  @Input() commentsId: StoriesId = [];
   comments: Comment[] = [];
 
-  constructor(
-    private commentService: CommentService,
-  ) { }
+  constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
     for (const commentId of this.commentsId) {

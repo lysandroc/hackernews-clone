@@ -8,7 +8,7 @@ export interface Story {
     urlDomain : string;
     by: string;
     descendants : number,
-    kids?: number[],
+    kids?: StoriesId,
     score : number,
     time : Date,
 };
