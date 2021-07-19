@@ -14,7 +14,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const appRoutes: Routes = [
   { path: '', component: StoriesComponent },
+  { path: 'comments', component: CommentsComponent },
 ];
+
 @NgModule({
   declarations: [
     AppComponent,

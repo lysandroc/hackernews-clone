@@ -1,5 +1,5 @@
 <div class="container">
-  <span class="relevance">{{ rankId + 1}}.</span>
+  <span class="relevance" *ngIf="rankId >= 0">{{ rankId + 1}}.</span>
   <fa-icon [icon]="story?.descendants ? faSortDown : faSortUp" class="icon"></fa-icon>
   <div class="section"> 
     <div class="row">
@@ -16,10 +16,10 @@
       </span>
     </div>
   <div>
-  <!-- <div *ngIf="story?.kids ?? false" class="comments"> -->
-  <!--   comments: -->
-  <!--   <app-comments [commentsId]="story?.kids ?? []"> -->
-  <!--   </app-comments> -->
-  <!-- </div> -->
-  <!-- <br> -->
+
+  <div *ngIf="storyDetailsMode && story?.kids ?? false" >
+    comments:
+    <!-- <app-comments [commentsId]="story?.kids ?? []"> -->
+    <!-- </app-comments> -->
+  </div>
 </div>

@@ -11,10 +11,11 @@ import { faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
 export class StoryComponent implements OnInit {
 
   @Output() onHideStory: EventEmitter<number> = new EventEmitter();
-
   @Output() btnClick = new EventEmitter();
   @Input() storyId: number = 0;
-  @Input() rankId: number = 0;
+  @Input() rankId: number = -1;
+  @Input() storyDetailsMode: boolean = false;
+
   story?: Story;
   faSortUp = faSortUp;
   faSortDown = faSortDown;
@@ -23,8 +24,8 @@ export class StoryComponent implements OnInit {
 
   ngOnInit(): void {
       this.storyService.getStory(this.storyId).subscribe((story) => {
-        console.log({ story })
-        if(!story.title) return;
+        console.log({ story, id: this.storyId})
+        if(!story.title) this.ngOnDestroy();
         let urlDomain = '';
 
         if(story.url) {

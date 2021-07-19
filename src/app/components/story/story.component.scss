@@ -5,7 +5,7 @@
 }
 
 .relevance {
-  color: gray;
+  color: var(--gray);
   width: 1.2rem;
 }
 
@@ -35,11 +35,12 @@
 
 .icon {
   margin: 0 5px;
+  color: var(--gray);
 }
 
 .url {
   font-size: 10px;
-  color: gray;
+  color: var(--gray);
 }
 
 .details {

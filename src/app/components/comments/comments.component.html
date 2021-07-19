@@ -1,3 +1,17 @@
 <div class="container">
-    <div *ngFor="let comment of comments"><div [innerHTML]="comment.text" class="content"></div></div>
+    <app-story
+        [storyId]="storyId"
+        [storyDetailsMode]=true
+    ></app-story>
+
+    <!-- <div *ngFor="let comment of comments"> -->
+    <!--     <div [innerHTML]="comment.text" class="content"></div> -->
+    <!-- </div> -->
+
+  <!-- <div *ngIf="story?.kids ?? false" class="comments"> -->
+  <!--   comments: -->
+  <!--   <app-comments [commentsId]="story?.kids ?? []"> -->
+  <!--   </app-comments> -->
+  <!-- </div> -->
+  <!-- <br> -->
 </div>
