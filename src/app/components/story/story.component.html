@@ -3,10 +3,10 @@
   <fa-icon [icon]="story?.descendants ? faSortDown : faSortUp" class="icon"></fa-icon>
   <div class="section"> 
     <div class="row">
-      <span class="title">
+      <span class="title" (click)="openUrl()">
         {{ story?.title }}
       </span>
-      <span class="url">({{ story?.urlDomain }})</span>
+      <span class="url" *ngIf="story && story?.urlDomain">({{ story?.urlDomain }})</span>
     </div>
     <div class="row">
       <span class="details">

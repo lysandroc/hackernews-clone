@@ -38,4 +38,11 @@ export class StoryComponent implements OnInit {
   hideStory(): void {
     this.onHideStory.emit();
   }
+
+  openUrl(): void {
+    const url = this.story?.url;
+    if (url) {
+      window.open(url);
+    }
+  }
 }
