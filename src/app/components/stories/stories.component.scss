@@ -1,7 +1,9 @@
 .container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 50rem));
-  justify-content: flex-start;
+  // display: grid;
+  // gap: 1rem;
+  // grid-template-columns: repeat(1fr, minmax(18rem, 50rem));
+  // justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
   background-color: var(--section-background);
 }

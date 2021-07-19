@@ -5,6 +5,7 @@ export interface Story {
     title : string;
     type : string;
     url : string;
+    urlDomain : string;
     by: string;
     descendants : number,
     kids?: number[],

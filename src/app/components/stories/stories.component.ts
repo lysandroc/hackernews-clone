@@ -15,4 +15,8 @@ export class StoriesComponent implements OnInit {
   ngOnInit(): void {
     this.storyService.getStories().subscribe((stories) => (this.stories = stories.splice(0,100)));
   }
+
+  hideStory(storyId: number): void {
+    this.stories = this.stories.filter(id => id !== storyId)
+  }
 }

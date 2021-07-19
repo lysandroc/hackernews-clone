@@ -1,15 +1,25 @@
 <div class="container">
-  <p> - order: {{ rankId + 1}} 
-      - title: {{ story?.title }}
-      - score: {{ story?.score }}
-      - by: {{ story?.by }}
-      - From: {{ story?.by }}
-      - id: {{storyId}} </p>
-
-  <div *ngIf="story?.kids ?? false" class="comments">
-    comments:
-    <app-comments [commentsId]="story?.kids ?? []">
-    </app-comments>
-  </div>
-  <br>
+  <span class="relevance">{{ rankId + 1}}.</span>
+  <fa-icon [icon]="story?.descendants ? faSortDown : faSortUp" class="icon"></fa-icon>
+  <div class="section"> 
+    <div class="row">
+      <span class="title">
+        {{ story?.title }}
+      </span>
+      <span class="url">({{ story?.urlDomain }})</span>
+    </div>
+    <div class="row">
+      <span class="details">
+        {{ story?.score }} points by {{ story?.by }} |
+        <span class="hide" (click)="hideStory()"> hide </span>
+        <span class="comments" *ngIf="story?.kids && story?.kids?.length">| {{ story?.kids?.length }} comments</span>
+      </span>
+    </div>
+  <div>
+  <!-- <div *ngIf="story?.kids ?? false" class="comments"> -->
+  <!--   comments: -->
+  <!--   <app-comments [commentsId]="story?.kids ?? []"> -->
+  <!--   </app-comments> -->
+  <!-- </div> -->
+  <!-- <br> -->
 </div>
