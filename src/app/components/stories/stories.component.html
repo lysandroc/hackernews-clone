@@ -1,9 +1,9 @@
 <div class="container">
 <app-story
-    *ngFor="let storyId of stories; let rankId = index"
-    [storyId]="storyId"
+    *ngFor="let story of stories; let rankId = index"
+    [story]="story"
     [rankId]="rankId"
-    (onHideStory)="hideStory(storyId)"
+    (onHideStory)="hideStory(story.id)"
     >
 </app-story>
 </div>

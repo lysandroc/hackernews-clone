@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StoryService } from '../../services/story/story.service';
-import { StoriesId } from '../../types/Story';
+import { Story } from '../../types/Story';
 
 @Component({
   selector: 'app-stories',
@@ -8,15 +8,33 @@ import { StoriesId } from '../../types/Story';
   styleUrls: ['./stories.component.scss']
 })
 export class StoriesComponent implements OnInit {
-  stories: StoriesId = [];
+  stories: Story[] = [];
 
   constructor(private storyService: StoryService) {}
 
   ngOnInit(): void {
-    this.storyService.getStories().subscribe((stories) => (this.stories = stories.splice(0,100)));
+    this.storyService.getStories().subscribe((storiesId) => {
+      const topStories = storiesId.splice(0,100); 
+      this.loadStories(topStories);
+    })
+  }
+
+  loadStories(topStories: number[]): void {
+    topStories.forEach(storyId => {
+      this.storyService.getStory(storyId).subscribe((story) => {
+        console.log(story)
+        if(!story || !story.title) return;
+        let urlDomain = '';
+        if(story.url) {
+          const { hostname } = new URL(story.url);
+          urlDomain = hostname.replace('www.', '');
+        }
+        this.stories.push({ ...story, urlDomain });
+      });
+    });
   }
 
   hideStory(storyId: number): void {
-    this.stories = this.stories.filter(id => id !== storyId)
+    this.stories = this.stories.filter(story => story.id !== storyId)
   }
 }

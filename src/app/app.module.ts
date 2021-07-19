@@ -11,10 +11,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { StoryComponent } from './components/story/story.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DetailComponent } from './components/detail/detail.component';
 
 const appRoutes: Routes = [
   { path: '', component: StoriesComponent },
-  { path: 'comments', component: CommentsComponent },
+  { path: 'detail', component: DetailComponent },
 ];
 
 @NgModule({
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     StoriesComponent,
     StoryComponent,
     CommentsComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

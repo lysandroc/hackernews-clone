@@ -1,0 +1,10 @@
+<div class="container">
+    <app-story
+        [story]="story"
+    ></app-story>
+    <app-comments 
+        *ngIf="story?.kids ?? false"  
+        [commentsId]="story?.kids ?? []"
+        class="comments"
+    ></app-comments>
+</div>

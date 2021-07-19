@@ -3,9 +3,10 @@
   <fa-icon [icon]="story?.descendants ? faSortDown : faSortUp" class="icon"></fa-icon>
   <div class="section"> 
     <div class="row">
-      <span class="title" (click)="openUrl()">
-        {{ story?.title }}
-      </span>
+      <a href="javascript:void(0)" 
+      (click)="openUrl()"
+      class="title">{{ story?.title }}</a>
+
       <span class="url" *ngIf="story && story?.urlDomain">({{ story?.urlDomain }})</span>
     </div>
     <div class="row">
@@ -16,10 +17,4 @@
       </span>
     </div>
   <div>
-
-  <div *ngIf="storyDetailsMode && story?.kids ?? false" >
-    comments:
-    <!-- <app-comments [commentsId]="story?.kids ?? []"> -->
-    <!-- </app-comments> -->
-  </div>
 </div>

@@ -1,7 +1,15 @@
 .container {
   overflow: hidden;
+  padding: 10px 25px;
+
+  font-family: "Maven Pro", sans-serif;
+}
+
+.by {
+  padding: 10px 0;
+  color: var(--lightgray);
 }
 
 .content {
-  border: 1px solid rebeccapurple;
+  padding-left: 10px;
 }
