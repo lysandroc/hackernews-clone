@@ -22,7 +22,6 @@ export class StoriesComponent implements OnInit {
   loadStories(topStories: number[]): void {
     topStories.forEach(storyId => {
       this.storyService.getStory(storyId).subscribe((story) => {
-        console.log(story)
         if(!story || !story.title) return;
         let urlDomain = '';
         if(story.url) {

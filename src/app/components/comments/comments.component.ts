@@ -18,7 +18,6 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {
     for (const commentId of this.commentsId) {
       this.commentService.getComment(commentId).subscribe((comment) => {
-        console.log('comment', comment)
         this.comments.push(comment)
       });
     } 

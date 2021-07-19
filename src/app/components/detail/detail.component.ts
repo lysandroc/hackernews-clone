@@ -11,7 +11,6 @@ import { Story } from 'src/app/types/Story';
 export class DetailComponent implements OnInit {
 
   story?: Story = undefined;
-  // storyId: number =0;
 
   constructor(
     private storyService: StoryService,
@@ -26,9 +25,7 @@ export class DetailComponent implements OnInit {
   }
 
   loadStory(storyId: number): void {
-    // this.storyId = storyId;
     this.storyService.getStory(storyId).subscribe((story) => {
-      console.log({ story, id: storyId})
       if(!story || !story.title) return;
       let urlDomain = '';
       if(story.url) {
